@@ -2,7 +2,7 @@ const express = require('express');
 
 const app = express();
 
-const port = 3000;
+const port = 6000;
 
 app.get(`/name`, (req, res)=>{
     res.send("Mukama Joseph ")
