@@ -50,3 +50,38 @@ for (let i in fruits){
 for (let i of fruits){
   console.log([i])
 }
+
+
+
+switch (key) {
+  case value:
+    
+    break;
+
+  default:
+    break;
+}
+
+
+      switch (day) {
+          case "Monday":
+              activity = "Start the week with a meeting.";
+              console.log(activity)
+              break;
+          case "Tuesday":
+              activity = "Work on the project deliverables.";
+              break;
+          case "Wednesday":
+              activity = "Mid-week review session.";
+              break;
+          case "Thursday":
+              activity = "Team brainstorming session.";
+              break;
+          case "Friday":
+              activity = "Wrap up tasks and prepare for the weekend.";
+              break;
+          case "Saturday":
+              activity = "Enjoy leisure activities.";
+              break;
+          
+      }
