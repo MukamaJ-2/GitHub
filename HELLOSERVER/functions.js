@@ -14,11 +14,11 @@ const name = (param)=>{
     return param;
 }
 
-
-const name = () =>{
-    console.log(`welcome `)
-}*/
-
+*/
+const say = (firstName, lastName) =>{
+    return(`My name is ${firstName} ${lastName}`)
+}
+console.log(say("Joseph","Mukama"));
 
 
 
