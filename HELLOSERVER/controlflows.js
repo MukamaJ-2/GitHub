@@ -52,36 +52,15 @@ for (let i of fruits){
 }
 
 
-
-switch (key) {
-  case value:
-    
+let day = monday
+switch (day) {
+  case "tuesday":
+    console.log(`the date today is ${day}`)
     break;
 
   default:
+    console.log("the day does not exist")
     break;
 }
 
 
-      switch (day) {
-          case "Monday":
-              activity = "Start the week with a meeting.";
-              console.log(activity)
-              break;
-          case "Tuesday":
-              activity = "Work on the project deliverables.";
-              break;
-          case "Wednesday":
-              activity = "Mid-week review session.";
-              break;
-          case "Thursday":
-              activity = "Team brainstorming session.";
-              break;
-          case "Friday":
-              activity = "Wrap up tasks and prepare for the weekend.";
-              break;
-          case "Saturday":
-              activity = "Enjoy leisure activities.";
-              break;
-          
-      }
