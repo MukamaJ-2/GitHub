@@ -58,9 +58,7 @@ console.log(isStudent || isInHall);
  let fruits = ["oranges", "grapes", "apples"]
 console.log(fruits);
 
-for (i in fruits){
-    console.log(fruits[i])
-}
+
 
 // adding items to the array
 fruits.push("berries");
