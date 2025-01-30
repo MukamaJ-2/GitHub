@@ -1,5 +1,8 @@
+import tkinter as tk
+from tkinter import messagebox
 from cryptography.fernet import Fernet
 import json
+import os
 
 # Generate a key for encryption (save this key securely!)
 def generate_key():
@@ -10,6 +13,8 @@ def generate_key():
 
 # Load the encryption key
 def load_key():
+    if not os.path.exists("secret.key"):
+        generate_key()
     return open("secret.key", "rb").read()
 
 # Encrypt a password
@@ -49,19 +54,64 @@ def retrieve_wifi_credentials(ssid, key):
             if encrypted_password:
                 return decrypt_password(encrypted_password.encode(), key)
             else:
-                return "SSID not found."
+                return None
     except FileNotFoundError:
-        return "No Wi-Fi credentials stored yet."
+        return None
 
-# Example usage
+# GUI Application
+class WiFiPasswordManagerApp:
+    def __init__(self, root):
+        self.root = root
+        self.root.title("Wi-Fi Password Manager")
+        self.key = load_key()
+
+        # GUI Elements
+        self.label_ssid = tk.Label(root, text="Wi-Fi SSID:")
+        self.label_ssid.grid(row=0, column=0, padx=10, pady=10)
+
+        self.entry_ssid = tk.Entry(root, width=30)
+        self.entry_ssid.grid(row=0, column=1, padx=10, pady=10)
+
+        self.label_password = tk.Label(root, text="Wi-Fi Password:")
+        self.label_password.grid(row=1, column=0, padx=10, pady=10)
+
+        self.entry_password = tk.Entry(root, width=30, show="*")
+        self.entry_password.grid(row=1, column=1, padx=10, pady=10)
+
+        self.button_store = tk.Button(root, text="Store Password", command=self.store_password)
+        self.button_store.grid(row=2, column=0, columnspan=2, pady=10)
+
+        self.button_retrieve = tk.Button(root, text="Retrieve Password", command=self.retrieve_password)
+        self.button_retrieve.grid(row=3, column=0, columnspan=2, pady=10)
+
+    def store_password(self):
+        ssid = self.entry_ssid.get()
+        password = self.entry_password.get()
+
+        if not ssid or not password:
+            messagebox.showwarning("Input Error", "Please enter both SSID and Password.")
+            return
+
+        store_wifi_credentials(ssid, password, self.key)
+        messagebox.showinfo("Success", "Wi-Fi credentials stored successfully!")
+        self.entry_ssid.delete(0, tk.END)
+        self.entry_password.delete(0, tk.END)
+
+    def retrieve_password(self):
+        ssid = self.entry_ssid.get()
+
+        if not ssid:
+            messagebox.showwarning("Input Error", "Please enter the SSID.")
+            return
+
+        password = retrieve_wifi_credentials(ssid, self.key)
+        if password:
+            messagebox.showinfo("Retrieved Password", f"Password for {ssid}: {password}")
+        else:
+            messagebox.showwarning("Not Found", f"No password found for SSID: {ssid}")
+
+# Run the application
 if __name__ == "__main__":
-    # Generate or load the encryption key
-    key = generate_key()  # Call this only once to generate the key
-    # key = load_key()  # Use this after the key is generated
-
-    # Store a Wi-Fi password
-    store_wifi_credentials("MyHomeWiFi", "MySecurePassword123", key)
-
-    # Retrieve a Wi-Fi password
-    password = retrieve_wifi_credentials("MyHomeWiFi", key)
-    print(f"Retrieved password: {password}")
+    root = tk.Tk()
+    app = WiFiPasswordManagerApp(root)
+    root.mainloop()
