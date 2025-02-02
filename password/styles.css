@@ -1,0 +1,38 @@
+body {
+    width: 300px;
+    padding: 15px;
+    font-family: Arial, sans-serif;
+  }
+  
+  .container {
+    text-align: center;
+  }
+  
+  .input-group {
+    margin: 10px 0;
+  }
+  
+  input {
+    width: 90%;
+    padding: 8px;
+    margin: 5px 0;
+  }
+  
+  button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    width: 48%;
+    margin: 5px 1%;
+  }
+  
+  button:hover {
+    opacity: 0.8;
+  }
+  
+  #result {
+    margin-top: 15px;
+    word-wrap: break-word;
+  }
