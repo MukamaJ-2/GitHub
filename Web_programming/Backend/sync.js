@@ -4,5 +4,5 @@ console.log("water is boiling")
 setTimeout(()=>{
     console.log("The water is ready");
 },5000)
-console.log("completed")
-console.log("")
+console.log("continue wwith other stuff")
+
