@@ -1,0 +1,36 @@
+/*h2 styling*/
+/*Unversal selector*/
+*{
+    color: blueviolet;
+}
+
+/*Element selector*/
+
+h2 {
+    color: green;
+    font-size: 40px;
+    }
+    ul{
+        font-size: 15px;
+    }
+    body{
+        font-family:Georgia, 'Times New Roman', Times, serif;
+        text-align: center;
+        align-items: center;
+    }
+    p{
+        font-size: 20px;
+    }
+    /*Class selector*/
+    .button{
+        color: burlywood;
+    }
+
+    /*ID selectors*/
+    #main-title{
+        color: bisque;
+    }
+    /*Grouping selector*/
+    h1,h2,h3{
+        background-color: azure;
+    }
