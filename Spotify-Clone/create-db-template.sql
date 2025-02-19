@@ -48,3 +48,21 @@ E.DeptNo
 ORDER BY P.ProjName;
 
 --e)
+SELECT E.EmpNo,E.EName,E.job,E.Salary, d.DName As Deparment,p.projname AS Projec
+FROM Employee E JOIN Department d ON E.Deptno =d.Deptno
+JOIN Project P ON D.Deptno =P.Deptno
+WHERE E.Salary> 40000;
+--f)_Count.How.Nany.Emplovees.Arein.Each.Department.Wotkine.onaprolet
+SELECT D.DName AS Department,p.projName As project, COUNT(E.EmpNo) AS TotalEmployee
+FROM Employee E JOIN Department d oN E.Deptno = D.Deptno
+JOIN Project P ON D.Deptno = P.Deptno
+GROUP BY D.DName, p.ProjName;
+
+
+--g)
+SELECT E.EmpNo, E.EName, E.job, D.DName AS Department, p.projname AS Project
+FROM Employee E  JOIN Department D ON E.DeptNo = D.DeptNo
+JOIN Project p ON d.deptNo = p.deptno
+WHERE e.job = 'manager';
+
+use cs;
