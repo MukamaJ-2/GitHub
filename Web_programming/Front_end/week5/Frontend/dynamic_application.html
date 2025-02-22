@@ -2,14 +2,39 @@
 <html>
   <head>
     <title>Dynamic Application</title>
+    <style>
+
+    </style>
+    <script src="./action_it.js"></script>
   </head>
-  <body>
+  <body onload="greet()">
 
    
     <button onclick="alert('Hello Joseph Mukama')">Click me</button>
 
     <p id="text">This is the first HTML,CSS and Javascript fusion</p>
-    <button onclick="document.getElementById('text').innerHTML = 'Iam testing inline in java'">Change Text</button>
+    <button onclick="document.getElementById('text').innerHTML = 'I am testing inline in java'">Change Text</button>
+    <button id="click">Internal Javascript Click</button>
+  <script>
+    document.getElementById('click').onclick =
+    function() {alert("The button has been clicked.")}
+    
 
+   const buttonId = document.getElementById("click");
+
+   buttonId.onclick = function(){
+    alert("Button has been clicked.")
+   }
+
+   buttonId.onmouseout = function(){
+    buttonId.style.color = "red"
+   }
+
+   buttonId.onmouseover = function(){
+    buttonId.style.color = "yellow"
+   }
+    
+
+  </script>
   </body>
 </html>
