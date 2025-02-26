@@ -9,7 +9,7 @@ for (let i=1; i<=10; i++){
     }
 }
 
-// exercisen 1
+// exercise 1
 for (let i=1; i<=10; i++){
     console.log(i);   
 }
@@ -33,12 +33,3 @@ while (answer !== "yes"){
 }
 
 
-//exercise 3
-let sum = 0;  // Initialize sum to 0
-let number = 1;  
-while (number <= 100) {
-    sum += number;  
-    number++;  
-}
-
-console.log("The sum of numbers from 1 to 100 is: " + sum);
