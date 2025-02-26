@@ -35,6 +35,14 @@ INSERT INTO empx (EID, designation, age , gender, email, telno) VALUES
 ('E002','clerk','34','m','two@gmail.com','1534567898');
 
 
-SELECT CONSTRAINT_NAME, CONSTRAINT_type FROM information_schema.TABLE_CONSTRAINTS
+SELECT CONSTRAINT_NAME, CONSTRAINT_type, TABLE_NAME FROM information_schema.TABLE_CONSTRAINTS
 WHERE TABLE_NAME='empx';
     DEFAULT CHARACTER SET = 'utf8mb4';
+
+    CREATE TABLE project(
+        ProjectID INT PRIMARY KEY AUTO_INCREMENT,
+        ProjectName VARCHAR(100) NOT NULL,
+        Empolyee
+    )
+
+    -- on delete set null 
