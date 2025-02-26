@@ -3,7 +3,7 @@
   <head>
     <title>Dynamic Application</title>
     <style>
-
+       
     </style>
     <script src="./action_it.js"></script>
   </head>
@@ -12,13 +12,29 @@
    
     <button onclick="alert('Hello Joseph Mukama')">Click me</button>
 
-    <p id="text">This is the first HTML,CSS and Javascript fusion</p>
-    <button onclick="document.getElementById('text').innerHTML = 'I am testing inline in java'">Change Text</button>
+    <p id="text">This is the first HTML, CSS and JavaScript fusion</p>  
+<button onclick="toggleText()">Change Text</button>  
     <button id="click">Internal Javascript Click</button>
-  <script>
+
+    
+    <input type="text" id="colorInput" placeholder="Enter a color ">  
+     <button onclick="bg()">Change Background</button> 
+<script>
     document.getElementById('click').onclick =
     function() {alert("The button has been clicked.")}
     
+    function bg() {
+        const color = document.getElementById('colorInput').value;
+        document.body.style.backgroundColor = color || 'green';
+    }
+
+
+        function toggleText() {
+        const text = document.getElementById('text');
+        text.innerHTML = text.innerHTML === 'This is the first HTML, CSS and JavaScript fusion' 
+            ? 'I am testing inline in Java' 
+            : 'This is the first HTML, CSS and JavaScript fusion';
+    }
 
    const buttonId = document.getElementById("click");
 
@@ -38,3 +54,5 @@
   </script>
   </body>
 </html>
+
+
