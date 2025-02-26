@@ -91,3 +91,34 @@ INSERT INTO EMPY VALUES('E127', 40, 'M', 'GREEN', 'SALES', 35000, '1234567895', 
 
 -- Verify data
 SELECT * FROM EMPY WHERE SALARY NOT BETWEEN 40000 AND 100000;
+
+
+CREATE table Employe(
+    EmployeeID INT PRIMARY KEY AUTO_INCREMENT,
+    FirstName VARCHAR(50) NOT NULL,
+    LastName VARCHAR(50) NOT NULL,
+    Age INT check(Age>=18),
+    Email VARCHAR(100) UNIQUE
+);
+
+DROP TABLE employe;
+INSERT INTO employe(FirstName, LastName, Age, Email) VALUES
+
+('john','doe',30,'john@gmail.com'),
+('Daniel','craig',19,'daniel@gmail.com'),
+('john','doe',18,'joh@gmail.com'),
+('joh','donas',19,'jon@gmail.com');
+
+ALTER Table employe drop COLUMN Age;
+
+ALTER TABLE employe ADD COLUMN Age INT check(Age>=20);
+
+
+UPDATE employe set age=32 WHERE EmployeeID=6;
+
+--default constraints--
+USE CS;
+ALTER TABLE employe ADD COLUMN Date_of_Joining DATETIME DEFAULT CURRENT_TIMESTAMP;
+
+ALTER TABLE employe add COLUMN telno  INT UNIQUE;
+DOJ DATETIME DEFAULT CURRENT_TIMESTAMP
