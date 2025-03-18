@@ -1,6 +1,7 @@
 CREATE DATABASE  sc;
 
 use sc;
+desc ta
 
 use cs;
 
@@ -32,7 +33,7 @@ INSERT INTO empx (EID, designation, age , gender, email, telno) VALUES
 ('E001','MANAGER','34', 'm','one@gmail.com','1234567898');
 
 INSERT INTO empx (EID, designation, age , gender, email, telno) VALUES
-('E002','clerk','34','m','two@gmail.com','1534567898');
+('E002','cleark','44','m','two@gmail.com','1934567898');
 
 
 SELECT CONSTRAINT_NAME, CONSTRAINT_type, TABLE_NAME FROM information_schema.TABLE_CONSTRAINTS
